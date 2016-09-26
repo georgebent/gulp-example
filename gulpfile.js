@@ -10,9 +10,10 @@ gulp.task('hello', function() {
 });
 
 gulp.task('sass', function(){
-   gulp.src('app/scss/*.scss')
+   return gulp.src('app/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('app/builds/css'));
+    .pipe(gulp.dest('app/builds/templates'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('jade', function() {
@@ -22,7 +23,8 @@ gulp.task('jade', function() {
       unformatted: []
     }))
     .pipe(gulp.dest('app/builds/templates'))
-    });
+    .pipe(browserSync.stream());
+  });
 
 gulp.task('watch', ['jade', 'sass'], function () {
   browserSync.init({
@@ -34,13 +36,12 @@ gulp.task('watch', ['jade', 'sass'], function () {
   gulp.watch('app/scss/*.scss', ['sass']);
 });
 
-// gulp.watch('app/templates/*.jade', function (event) {
-//   console.log('Event type: ' + event.type); // добавлено, изменено или удалено
-//   console.log('Event path: ' + event.path); // путь к файлу
-// });
-// gulp.watch('app/scss/*.scss', function (event) {
-//   console.log('Event type: ' + event.type); // добавлено, изменено или удалено
-//   console.log('Event path: ' + event.path); // путь к файлу
-// });
-
+gulp.watch('app/templates/*.jade', function (event) {
+  console.log('Event type: ' + event.type); 
+  console.log('Event path: ' + event.path); 
+});
+gulp.watch('app/scss/*.scss', function (event) {
+  console.log('Event type: ' + event.type); 
+  console.log('Event path: ' + event.path); 
+});
 
