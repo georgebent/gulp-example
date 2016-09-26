@@ -10,6 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-html-prettify": "0.0.1",
+    "gulp-jade": "^1.1.0",
     "gulp-sass": "^2.3.2"
   }
 }
