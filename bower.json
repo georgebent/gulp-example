@@ -1,0 +1,20 @@
+{
+  "name": "gulp-bower",
+  "description": "Tutorial",
+  "main": "index.js",
+  "authors": [
+    "George Bent"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/georgebent/gulp-example",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

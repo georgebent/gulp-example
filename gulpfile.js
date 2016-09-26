@@ -6,13 +6,13 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync').create();
 
 gulp.task('hello', function() {
-  console.log('Hello Yura');
+  console.log('Hello George');
 });
 
 gulp.task('sass', function(){
    return gulp.src('app/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('app/builds/templates'))
+    .pipe(gulp.dest('app/builds'))
     .pipe(browserSync.stream());
 });
 
@@ -22,14 +22,14 @@ gulp.task('jade', function() {
     .pipe(prettify({
       unformatted: []
     }))
-    .pipe(gulp.dest('app/builds/templates'))
+    .pipe(gulp.dest('app/builds/'))
     .pipe(browserSync.stream());
   });
 
 gulp.task('watch', ['jade', 'sass'], function () {
   browserSync.init({
         server: {
-            baseDir: "app/builds/templates/"
+            baseDir: "app/builds/"
         }
     });
   gulp.watch('app/templates/*.jade', ['jade']);
