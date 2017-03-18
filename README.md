@@ -17,8 +17,9 @@ Usage
 -----------------------------------
 
 Run command:
-    gulp watch
-    
+```sh
+gulp watch
+``` 
 Add or change files 
 1. In folder templates - Jade
 2. In folder scss - Scss or Sass
