@@ -8,8 +8,10 @@ Installation
 
 1. Download
 2. Run command:
-    npm update
-    bower install
+```sh
+npm update
+bower install
+```
 
 Usage
 -----------------------------------
