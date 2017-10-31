@@ -23,3 +23,4 @@ gulp watch
 Add or change files 
 1. In folder templates - Jade
 2. In folder scss - Scss or Sass
+3. In folder js - js files
